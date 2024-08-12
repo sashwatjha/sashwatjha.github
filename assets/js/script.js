@@ -26,6 +26,7 @@ const overlay = document.querySelector("[data-overlay]");
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
+const modalDate = document.querySelector("[data-modal-date]");
 
 // modal toggle function
 const specializationsModalFunc = function () {
@@ -42,6 +43,8 @@ for (let i = 0; i < specializationsItem.length; i++) {
     modalImg.alt = this.querySelector("[data-specializations-avatar]").alt;
     modalTitle.innerHTML = this.querySelector("[data-specializations-title]").innerHTML;
     modalText.innerHTML = this.querySelector("[data-specializations-text]").innerHTML;
+    modalDate.setAttribute('datetime', new Date(this.querySelector("[data-specializations-date]").getAttribute('datetime')));
+    modalDate.textContent = this.querySelector("[data-specializations-date]").innerHTML;
 
     specializationsModalFunc();
 
